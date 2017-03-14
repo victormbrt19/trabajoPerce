@@ -60,42 +60,45 @@ public class ReadFileNovedades {
                         break;
                     }
                 }
+                try {
+                    switch (j) {
 
-                switch (j) {
+                        case 0:
+                            if (celda.getCellType() == Cell.CELL_TYPE_STRING) {
+                                No.setNombres(celda.getStringCellValue());
+                            }
+                            break;
 
-                    case 0:
-                        if (celda.getCellType() == Cell.CELL_TYPE_STRING) {
-                            No.setNombres(celda.getStringCellValue());
-                        }
-                        break;
+                        case 1:
+                            if (celda.getCellType() == Cell.CELL_TYPE_STRING) {
+                                No.setTipo_Novedad(celda.getStringCellValue());
+                            }
+                            break;
+                        case 2:
 
-                    case 1:
-                        if (celda.getCellType() == Cell.CELL_TYPE_STRING) {
-                            No.setTipo_Novedad(celda.getStringCellValue());
-                        }
-                        break;
-                    case 2:
+                            No.setFecha_inicio(new java.sql.Date(((Date) celda.getDateCellValue()).getTime()));
 
-                        No.setFecha_inicio(new java.sql.Date(((Date) celda.getDateCellValue()).getTime()));
+                            break;
 
-                        break;
+                        case 3:
 
-                    case 3:
+                            No.setFecha_fin(new java.sql.Date(((Date) celda.getDateCellValue()).getTime()));
 
-                        No.setFecha_fin(new java.sql.Date(((Date) celda.getDateCellValue()).getTime()));
+                            break;
 
-                        break;
-
-                    case 4:
-                        if (celda.getCellType() == Cell.CELL_TYPE_NUMERIC) {
-                            No.setDias((int) celda.getNumericCellValue());
-                        }
-                        break;
-                    case 5:
-                        if (celda.getCellType() == Cell.CELL_TYPE_NUMERIC) {
-                            No.setHoras((Double) celda.getNumericCellValue());
-                        }
-                        break;
+                        case 4:
+                            if (celda.getCellType() == Cell.CELL_TYPE_NUMERIC) {
+                                No.setDias((int) celda.getNumericCellValue());
+                            }
+                            break;
+                        case 5:
+                            if (celda.getCellType() == Cell.CELL_TYPE_NUMERIC) {
+                                No.setHoras((Double) celda.getNumericCellValue());
+                            }
+                            break;
+                    }
+                } catch (Exception e) {
+                    System.out.println(e);
                 }
 
             }

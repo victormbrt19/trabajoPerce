@@ -79,6 +79,7 @@
                 <h1 class="title">administracion</h1>
                 <div class="form-group">
                     <label for="Fecha"> Fecha </label>
+                    
                     <input type="text" name="Fecha" class="campofecha" size="12">
                 </div>
                 <br>

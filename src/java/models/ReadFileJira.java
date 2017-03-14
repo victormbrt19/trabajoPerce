@@ -208,7 +208,7 @@ public class ReadFileJira {
 
                 lst.get(j).setHoras_extras_Proyecto("Horas extras");
                 SumaHorasExtras = SumaHorasExtras + ex;
-                lst.get(j).setCan_extras(ex);
+                lst.get(j).setCan_extras_Por_Ticket(ex);
 
             }
 
@@ -274,6 +274,8 @@ public class ReadFileJira {
             }
         }
 
+        //EN ESTE FOR SE ESTA SUMANDO EL TOTAL DE HORAS EXTRAS
+        // DE CADA EMPLEADO QUE LE DEDICARON A CADA TICKET
         for (int j = 0; j < lst.size(); j++) {
             String projecto = lst.get(j).getProyecto();
             String ticket = lst.get(j).getClave();
@@ -289,7 +291,7 @@ public class ReadFileJira {
                     if (ticket == null) {
                         nombre_anterior = Nombre;
                         project_anterior = pro;
-                        lst.get(j).setCan_extras(horas);
+                        lst.get(j).setCan_extras_Por_Ticket(horas);
                     } else {
                         project_anterior = pro;
                         sumaextras = horas;
@@ -301,8 +303,8 @@ public class ReadFileJira {
                     if (ticket == null) {
                         nombre_anterior = Nombre;
                         project_anterior = pro;
-                        // sumaextras = horas;
-                        lst.get(j).setCan_extras(horas);
+
+                        lst.get(j).setCan_extras_Por_Ticket(horas);
                     } else if (ticket_anterior != null & ticket.equals(ticket_anterior)) {
                         sumaextras = sumaextras + horas;
 
@@ -316,7 +318,7 @@ public class ReadFileJira {
                                     Matcher mate = projecname.matcher(project);
 
                                     if (mate.matches()) {
-                                        lst.get(i).setCan_extras(sumaextras);
+                                        lst.get(i).setCan_extras_Por_Ticket(sumaextras);
                                     }
                                 }
                             }
@@ -326,7 +328,7 @@ public class ReadFileJira {
                         nombre_anterior = Nombre;
                         ticket_anterior = ticket;
                         project_anterior = pro;
-                        lst.get(j).setCan_extras(horas);
+                        lst.get(j).setCan_extras_Por_Ticket(horas);
                         sumaextras = 0.0;
                         sumaextras = horas;
                     }

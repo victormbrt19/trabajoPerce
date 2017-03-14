@@ -36,84 +36,87 @@ public class ReadFileCostos {
                         break;
                     }
                 }
-                switch (j) {
+                try {
+                    switch (j) {
 
-                    case 0:
-                        
-                        break;
-                    case 1:
-                        if (celda.getCellType() == Cell.CELL_TYPE_STRING) {
-                            c.setNombres(celda.getStringCellValue());
-                        }
-                        break;
-                    case 2:
-                        if (celda.getCellType() == Cell.CELL_TYPE_STRING) {
-                            c.setTipoDeSueldo(celda.getStringCellValue());
-                        }
-                        break;
-                    case 3:
-                        break;
+                        case 0:
 
-                    case 4:
-                        break;
+                            break;
+                        case 1:
+                            if (celda.getCellType() == Cell.CELL_TYPE_STRING) {
+                                c.setNombres(celda.getStringCellValue());
+                            }
+                            break;
+                        case 2:
+                            if (celda.getCellType() == Cell.CELL_TYPE_STRING) {
+                                c.setTipoDeSueldo(celda.getStringCellValue());
+                            }
+                            break;
+                        case 3:
+                            break;
 
-                    case 5:
-                        break;
-                    case 6:
-                        if (celda.getCellType() == Cell.CELL_TYPE_NUMERIC) {
-                            c.setIncapacidades(celda.getNumericCellValue());
-                        }
-                        break;
-                    case 7:
-                        break;
-                    case 8:
-                        break;
-                    case 9:
-                        break;
-                    case 10:
-                        break;
-                    case 11:
-                        break;
-                    case 12:
-                        break;
-                    case 13:
-                        break;
-                    case 14:
-                        break;
-                    case 15:
-                        break;
-                    case 16:
-                        break;
-                    case 17:
-                        break;
-                    case 18:
-                        break;
-                    case 19:
-                        break;
-                    case 20:
-                        break;
-                    case 21:
-                        break;
-                    case 22:
-                        break;
-                    case 23:
-                        break;
-                    case 24:
-                        break;
-                    case 25:
-                        break;
-                    case 26:
-                        break;
-                    case 27:
-                        if (celda.getCellType() == Cell.CELL_TYPE_FORMULA) {
-                            c.setTotal(celda.getNumericCellValue());
-                        }
-                        break;
+                        case 4:
+                            break;
 
+                        case 5:
+                            break;
+                        case 6:
+                            if (celda.getCellType() == Cell.CELL_TYPE_NUMERIC) {
+                                c.setIncapacidades(celda.getNumericCellValue());
+                            }
+                            break;
+                        case 7:
+                            break;
+                        case 8:
+                            break;
+                        case 9:
+                            break;
+                        case 10:
+                            break;
+                        case 11:
+                            break;
+                        case 12:
+                            break;
+                        case 13:
+                            break;
+                        case 14:
+                            break;
+                        case 15:
+                            break;
+                        case 16:
+                            break;
+                        case 17:
+                            break;
+                        case 18:
+                            break;
+                        case 19:
+                            break;
+                        case 20:
+                            break;
+                        case 21:
+                            break;
+                        case 22:
+                            break;
+                        case 23:
+                            break;
+                        case 24:
+                            break;
+                        case 25:
+                            break;
+                        case 26:
+                            break;
+                        case 27:
+                            if (celda.getCellType() == Cell.CELL_TYPE_FORMULA) {
+                                c.setTotal(celda.getNumericCellValue());
+                            }
+                            break;
+
+                    }
+                } catch (Exception e) {
+                    System.out.println(e);
                 }
             }
 
-            
             if (j > 0) {
                 GuardarTablaCostos(c);
 

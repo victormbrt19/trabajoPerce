@@ -42,48 +42,52 @@ public class ReadFileHorasExtras {
                         break;
                     }
                 }
-                switch (j) {
-                    case 0:
-                        if (celda.getCellType() == Cell.CELL_TYPE_STRING) {
-                            Ho.setNombreEmpleado(celda.getStringCellValue());
-                        }
-                        break;
-                    case 1:
-                        if (celda.getCellType() == Cell.CELL_TYPE_STRING) {
-                            Ho.setModalida_deCobro(celda.getStringCellValue());
-                        }
-                        break;
-                    case 2:
-                        if (celda.getCellType() == Cell.CELL_TYPE_STRING) {
-                            Ho.setPersona_cuentaCobro(celda.getStringCellValue());
-                        }
-                        break;
-                    case 3:
-                        if (celda.getCellType() == Cell.CELL_TYPE_STRING) {
-                            Ho.setTikect(celda.getStringCellValue());
-                        }
-                        break;
-                    case 4:
-                        if (celda.getCellType() == Cell.CELL_TYPE_NUMERIC) {
-                            stra = String.valueOf(celda.getNumericCellValue());
-                        } else {
-                            stra = celda.getStringCellValue();
-                        }
-                        Ho.setHoras(Double.parseDouble(stra.replaceAll(",", ".")));
-                        break;
-                    case 5:
-                        if (celda.getCellType() == Cell.CELL_TYPE_NUMERIC) {
-                            stra = String.valueOf(celda.getNumericCellValue());
-                        } else {
-                            stra = celda.getStringCellValue();
-                        }
-                        Ho.setValor(Double.parseDouble(stra.replaceAll(",", ".")));
-                        break;
-                    case 6:
-                        if (celda.getCellType() == Cell.CELL_TYPE_NUMERIC) {
-                            Ho.setMes((int) celda.getNumericCellValue());
-                        }
-                        break;
+                try {
+                    switch (j) {
+                        case 0:
+                            if (celda.getCellType() == Cell.CELL_TYPE_STRING) {
+                                Ho.setNombreEmpleado(celda.getStringCellValue());
+                            }
+                            break;
+                        case 1:
+                            if (celda.getCellType() == Cell.CELL_TYPE_STRING) {
+                                Ho.setModalida_deCobro(celda.getStringCellValue());
+                            }
+                            break;
+                        case 2:
+                            if (celda.getCellType() == Cell.CELL_TYPE_STRING) {
+                                Ho.setPersona_cuentaCobro(celda.getStringCellValue());
+                            }
+                            break;
+                        case 3:
+                            if (celda.getCellType() == Cell.CELL_TYPE_STRING) {
+                                Ho.setTikect(celda.getStringCellValue());
+                            }
+                            break;
+                        case 4:
+                            if (celda.getCellType() == Cell.CELL_TYPE_NUMERIC) {
+                                stra = String.valueOf(celda.getNumericCellValue());
+                            } else {
+                                stra = celda.getStringCellValue();
+                            }
+                            Ho.setHoras(Double.parseDouble(stra.replaceAll(",", ".")));
+                            break;
+                        case 5:
+                            if (celda.getCellType() == Cell.CELL_TYPE_NUMERIC) {
+                                stra = String.valueOf(celda.getNumericCellValue());
+                            } else {
+                                stra = celda.getStringCellValue();
+                            }
+                            Ho.setValor(Double.parseDouble(stra.replaceAll(",", ".")));
+                            break;
+                        case 6:
+                            if (celda.getCellType() == Cell.CELL_TYPE_NUMERIC) {
+                                Ho.setMes((int) celda.getNumericCellValue());
+                            }
+                            break;
+                    }
+                } catch (NumberFormatException e) {
+                    System.out.println(e);
                 }
             }
             if (Ho.getNombreEmpleado() != null) {

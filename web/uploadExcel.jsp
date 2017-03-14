@@ -169,37 +169,40 @@
             <article>
                 <p>
                 <div class="container">
-                    <form name="form" action ="uplaodExcel2"  method="post"  enctype="multipart/form-data"  >
-
-
-                        <!--    <h1 class="title"></h1>
-                            <div class="form-group">
-                         <label for="Fecha"> Por favor ingresa la fecha del archivo a subir</label>-->
-                        <!--  <h1 class="title">Registro empleados</h1> -->
-                        <!--    <div class="form-group"> <!--esta clase sirve para dar un espacion entre label-->
-                        <!--   <h4>Por favor ingrese la fecha del archivo a subir</h4>
-                           <label for="Fecha">Fecha</label>
-                           <input type="text" name="Fecha" class="fecha" size="9" placeholder="Mes.Año" required="true"/>
-
-                       </div> -->
-                        <div class="form-group">
-
-                            <label for="Fecha">Fecha</label>
-                            <select  class="form-control"  name="Fecha" type="text" required="true">
-
-                                <%for (CargarFechas fecha : fechas) {%>
-                                <option value="<%=fecha.getYear_Meses()%>"><%= fecha.getYear_Meses()%></option>
-
-                                <%}%>                    
-                            </select>
-
-
-                        </div>
-
-
-                        <br>
-                        <br>
+                    <form name="form" action ="uplaodExcel2"  method="post"  enctype="multipart/form-data">
                         <table border="2">
+
+
+                            <!--    <h1 class="title"></h1>-->
+                            <!-- <div class="form-group">-->
+                            <!-- <label for="Fecha"> Por favor ingresa la fecha del archivo a subir</label>-->
+                            <!--  <h1 class="title">Registro empleados</h1> -->
+                            <!--    <div class="form-group"> <!--esta clase sirve para dar un espacion entre label-->
+                            <!--   <h4>Por favor ingrese la fecha del archivo a subir</h4> -->
+                            <!--<label for="Fecha">Fecha</label>-->
+                            <!--<input type="text" name="Fecha" class="fecha" size="9" placeholder="Mes.Año" required="true"/>-->
+                            <!--</div> -->
+                            <!--</div>-->
+
+                            <h1 class="title">Archivo Jira</h1>
+                            <div class="form-group">
+
+                                <label for="Fecha">Fecha</label>
+                                <select  class="form-control"  name="Fecha" type="text" required="true">
+
+                                    <%for (CargarFechas fecha : fechas) {%>
+                                    <option value="<%=fecha.getYear_Meses()%>"><%= fecha.getYear_Meses()%></option>
+
+                                    <%}%>                    
+                                </select>
+
+                            </div>
+
+
+
+                            <br>
+                            <br>
+
                             <tr>
                                 <td align="center">Seleccionar archivo de Jira</td>
                             </tr>
@@ -221,9 +224,8 @@
                 </div>
 
 
-
                 <!--   <iframe name="pp" style="position:absolute; top:-1500px;"></iframe>-->
-                </div>
+
 
 
                 <iframe name="pp" style="position:absolute; top:-1500px;"></iframe>

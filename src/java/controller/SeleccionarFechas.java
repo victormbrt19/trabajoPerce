@@ -5,7 +5,6 @@
  */
 package controller;
 
-
 import dao.SeleccionarFechasDao;
 import entidades.CargarFechas;
 import java.io.IOException;
@@ -25,7 +24,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author pcc
  */
 public class SeleccionarFechas extends HttpServlet {
-
+    
     private CargarFechas Cargarfechas;
 
     /**
@@ -41,15 +40,15 @@ public class SeleccionarFechas extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-
+            
             ArrayList<CargarFechas> fecha = new ArrayList<>();
             SeleccionarFechasDao dao = new SeleccionarFechasDao();
             ResultSet res = dao.CargarDatos();
-
+            
             try {
                 while (res.next()) {
                     fecha.add(new CargarFechas(res.getString("Año_Meses")));
-
+                    
                 }
             } catch (SQLException ex) {
                 System.out.println(ex);
@@ -57,7 +56,8 @@ public class SeleccionarFechas extends HttpServlet {
             }
             request.setAttribute("fecha", fecha);
             request.getRequestDispatcher("uploadExcel.jsp").forward(request, response);
-
+         //   request.getRequestDispatcher("Administracion.jsp").forward(request, response);
+            
         }
     }
 

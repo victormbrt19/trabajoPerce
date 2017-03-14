@@ -39,28 +39,30 @@ public class ReadFileNombres {
                     }
 
                 }
+                try {
+                    switch (j) {
 
-                switch (j) {
+                        case 0:
+                            if (celda.getCellType() == Cell.CELL_TYPE_NUMERIC) {
+                                em.setNro_Documento((int) celda.getNumericCellValue());
+                            }
+                            break;
 
-                    case 0:
-                        if (celda.getCellType() == Cell.CELL_TYPE_NUMERIC) {
-                            em.setNro_Documento((int) celda.getNumericCellValue());
-                        }
-                        break;
+                        case 1:
+                            if (celda.getCellType() == Cell.CELL_TYPE_STRING) {
+                                em.setNombre_Jira(celda.getStringCellValue());
+                            }
+                            break;
 
-                    case 1:
-                        if (celda.getCellType() == Cell.CELL_TYPE_STRING) {
-                            em.setNombre_Jira(celda.getStringCellValue());
-                        }
-                        break;
-
-                    case 2:
-                        if (celda.getCellType() == Cell.CELL_TYPE_STRING) {
-                            em.setNombre_Novedades(celda.getStringCellValue());
-                        }
-                        break;
+                        case 2:
+                            if (celda.getCellType() == Cell.CELL_TYPE_STRING) {
+                                em.setNombre_Novedades(celda.getStringCellValue());
+                            }
+                            break;
+                    }
+                } catch (Exception e) {
+                    System.out.println(e);
                 }
-
             }
             if (em.getNombre_Jira() != null) {
                 lst.add(em);

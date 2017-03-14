@@ -20,7 +20,7 @@ public class ReadFilelListaProyectos {
         TablaListaDeProyectos li;
         int j = 0;
 
-        for (int i = 1; i <=firstSheet.getLastRowNum(); i++) {
+        for (int i = 1; i <= firstSheet.getLastRowNum(); i++) {
             Row fila = firstSheet.getRow(i);
             li = new TablaListaDeProyectos();
 
@@ -32,40 +32,44 @@ public class ReadFilelListaProyectos {
                     }
 
                 }
-                switch(j) {
-                    case 0:
-                        if (celda.getCellType() == Cell.CELL_TYPE_STRING){
-                        li.setProyectosyConceptos(celda.getStringCellValue());
-                        }
-                        break;
-                    case 1:
-                        if (celda.getCellType() == Cell.CELL_TYPE_STRING){
-                        li.setProductos(celda.getStringCellValue());
-                        }
-                        break;
-                    case 2:
-                        if (celda.getCellType() == Cell.CELL_TYPE_STRING){
-                        li.setFacturable(celda.getStringCellValue());
-                        }
-                        break;
-                    case 3:
-                        if (celda.getCellType() == Cell.CELL_TYPE_STRING){
-                        li.setEspecialidad(celda.getStringCellValue());
-                        }
-                        break;
-                
+                try {
+                    switch (j) {
+                        case 0:
+                            if (celda.getCellType() == Cell.CELL_TYPE_STRING) {
+                                li.setProyectosyConceptos(celda.getStringCellValue());
+                            }
+                            break;
+                        case 1:
+                            if (celda.getCellType() == Cell.CELL_TYPE_STRING) {
+                                li.setProductos(celda.getStringCellValue());
+                            }
+                            break;
+                        case 2:
+                            if (celda.getCellType() == Cell.CELL_TYPE_STRING) {
+                                li.setFacturable(celda.getStringCellValue());
+                            }
+                            break;
+                        case 3:
+                            if (celda.getCellType() == Cell.CELL_TYPE_STRING) {
+                                li.setEspecialidad(celda.getStringCellValue());
+                            }
+                            break;
+
+                    }
+                } catch (Exception e) {
+                    System.out.println(e);
                 }
             }
-            if (j > 0){
-            GuardarDatosProyecto (li);
+            if (j > 0) {
+                GuardarDatosProyecto(li);
             }
         }
 
     }
 
     private static void GuardarDatosProyecto(TablaListaDeProyectos li) {
-        if (objListaProyectosDao == null){
-        objListaProyectosDao = new ListaProyectosDao(true);
+        if (objListaProyectosDao == null) {
+            objListaProyectosDao = new ListaProyectosDao(true);
         }
         objListaProyectosDao.GuardarDatosProyecto(li);
     }

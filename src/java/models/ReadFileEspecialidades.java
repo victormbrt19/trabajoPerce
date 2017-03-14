@@ -38,6 +38,7 @@ public class ReadFileEspecialidades {
                         break;
                     }
                 }
+                try {
                 switch (j) {
 
                     case 0:
@@ -58,6 +59,9 @@ public class ReadFileEspecialidades {
                         break;
                    
 
+                }
+                }catch (Exception e){
+                System.out.println (e);
                 }
             }
 

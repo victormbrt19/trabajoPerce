@@ -13,7 +13,7 @@ public class TablaJira {
     private String tipo;
     private String clave;
     private String titulo;
-    public String nombres;
+    private String nombres;
     private Double Horas_registradas_en_jira;
     private String proyecto;
     private Double Horas_laboradas_sin_extras;
@@ -21,7 +21,7 @@ public class TablaJira {
     private Double Horas_vacaciones;
     private Double Horas_licencias;
     private String Horas_extras_Proyecto;
-    private Double Can_extras;
+    private Double Can_extras_Por_Ticket;
     private Double Horas_laboradas_sin_extras_sin_novedades;
     private Double Tiempo_dedicado;
     private Double Horas_dedicadas;
@@ -33,6 +33,48 @@ public class TablaJira {
     private String Estado;
     private String Horas_Extras_Jira;
     private Double Total_Horas_Extras_Jira;
+    private Double Cobro_Horas_Extras;
+    private String Modalidad_Cobro;
+    private Double Costos_Para_La_Empresa;
+    private int Mes_Cobro;
+
+    public Double getCobro_Horas_Extras() {
+        if (Cobro_Horas_Extras == null) {
+            Cobro_Horas_Extras = 0.0;
+        }
+        return Cobro_Horas_Extras;
+    }
+
+    public void setCobro_Horas_Extras(Double Cobro_Horas_Extras) {
+        this.Cobro_Horas_Extras = Cobro_Horas_Extras;
+    }
+
+    public String getModalidad_Cobro() {
+        return Modalidad_Cobro;
+    }
+
+    public void setModalidad_Cobro(String Modalidad_Cobro) {
+        this.Modalidad_Cobro = Modalidad_Cobro;
+    }
+
+    public Double getCostos_Para_La_Empresa() {
+        if (Costos_Para_La_Empresa == null) {
+            Costos_Para_La_Empresa = 0.0;
+        }
+        return Costos_Para_La_Empresa;
+    }
+
+    public void setCostos_Para_La_Empresa(Double Costos_Para_La_Empresa) {
+        this.Costos_Para_La_Empresa = Costos_Para_La_Empresa;
+    }
+
+    public int getMes_Cobro() {
+        return Mes_Cobro;
+    }
+
+    public void setMes_Cobro(int Mes_Cobro) {
+       this.Mes_Cobro = Mes_Cobro;
+    }
 
     public String getHoras_Extras_Jira() {
 
@@ -273,15 +315,15 @@ public class TablaJira {
         this.Horas_extras_Proyecto = Horas_extras_Proyecto;
     }
 
-    public Double getCan_extras() {
-        if (Can_extras == null) {
-            Can_extras = 0.0;
+    public Double getCan_extras_Por_Ticket() {
+        if (Can_extras_Por_Ticket == null) {
+            Can_extras_Por_Ticket = 0.0;
         }
-        return Can_extras;
+        return Can_extras_Por_Ticket;
     }
 
-    public void setCan_extras(Double Can_extras) {
-        this.Can_extras = Can_extras;
+    public void setCan_extras_Por_Ticket(Double Can_extras_Por_Ticket) {
+        this.Can_extras_Por_Ticket = Can_extras_Por_Ticket;
     }
 
     public Double getHoras_laboradas_sin_extras_sin_novedades() {
